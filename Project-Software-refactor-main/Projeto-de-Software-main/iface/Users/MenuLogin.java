@@ -351,7 +351,7 @@ public class MenuLogin{
                                     return;
                                 }
                                 else if(option.equals("n")){
-                                    System.out.println("\ntype to continue:");                                                              System.out.println("\ntype to continue");
+                                    System.out.println("\ntype to continue:");
                                     Scanner ex =  new Scanner(System.in);
                                     ex.nextLine();
                                     return;
