@@ -2,8 +2,8 @@
 
 ## CODE SMELLS
 ## Long Method 
-- Metodo ``performAction`` na classe `MenuLogin` possui nuitas condiçoes com switch case e chama varias funções
-- Metodo ``performActionEdit`` na classe `MenuLogin` possui nuitas condiçoes com switch case
+- Metodo ``performAction`` na classe `MenuLogin` possui nuitas condiçoes com switch case e chama varias funções.
+- Metodo ``performActionEdit`` na classe `MenuLogin` possui nuitas condiçoes com switch case.
 
 
 ## Large Class 
@@ -16,8 +16,8 @@
 
  
 ## Indecent Exposure
-- Classe ``Users`` é uma Superclasse, mas na maior parte se utiliza sua Subclasse ``UsersDo`` 
+- Classe ``Users`` é uma Superclasse, mas na maior parte se utiliza sua Subclasse ``UsersDo`` .
 
 
 ## Primitive Obsession 
-- Classe ``Users`` é uma Superclasse que possui muitos arraylist dentro do objeto para armazenar dados
+- Classe ``Users`` é uma Superclasse que possui muitos arraylist dentro do objeto para armazenar dados.
