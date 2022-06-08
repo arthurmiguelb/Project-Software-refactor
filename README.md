@@ -2,7 +2,7 @@
 
 ## CODE SMELLS
 ## Long Method 
-- Metodo ``performAction`` na classe `MenuLogin` possui nuitas condiçoes com switch case e chama varias funções.
+- Metodo ``performAction`` na classe `MenuLogin` possui muitas condiçoes com switch case e chama varias funções.
 - Metodo ``performActionEdit`` na classe `MenuLogin` possui nuitas condiçoes com switch case.
 
 
