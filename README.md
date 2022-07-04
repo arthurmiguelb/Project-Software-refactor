@@ -1,23 +1,14 @@
 # Projeto OO: Iface
 
 ## CODE SMELLS
-## Long Method 
+### Long Method 
 - Metodo ``performAction`` na classe `MenuLogin` possui muitas condiçoes com switch case e chama varias funções.
-- Metodo ``performActionEdit`` na classe `MenuLogin` possui nuitas condiçoes com switch case.
+#### Solução 
+- Metodo ``perfomaction´´ da classe `menuLogin` foi fragmentado em outros metodos mais objetivos
 
 
-## Large Class 
+### Large Class 
 - Classe ``MenuLogin`` faz muita coisa em apenas uma classe. Muitos métodos.
-- Classe ``Menu`` faz muita coisa, e possui muitas condições.
+#### Solução 
+- Classe ``MenuLogin`` foi fragmentada em outras classes mais específicas como: ``Friend``, ``CommunityEdit``.
 
-
-## Lazy Class 
-- Classe ``Users`` é uma Superclasse que possui apenas uma Subclasse.
-
- 
-## Indecent Exposure
-- Classe ``Users`` é uma Superclasse, mas na maior parte se utiliza sua Subclasse ``UsersDo`` .
-
-
-## Primitive Obsession 
-- Classe ``Users`` é uma Superclasse que possui muitos arraylist dentro do objeto para armazenar dados.
