@@ -163,6 +163,127 @@ public class MenuLogin{
         System.out.println("5) add or change number");
         System.out.println("0) exit");
     }
+    private void perfomActionEditRefactor1(final Users user, final ArrayList<UserDo> users){
+        System.out.println("\nenter your new nickname:");
+                    final Scanner q = new Scanner(System.in);
+                    final String newNickname = q.next();
+                        for(final Users User : users){
+                            if(user.getName().equals(newNickname)){
+                                System.out.print("\033[H\033[2J");  
+                                System.out.flush();
+                                System.out.println("\nnickname already exists. ");
+                            return;
+                            }
+                        }
+                        System.out.print("\033[H\033[2J");  
+                        System.out.flush();
+                        user.backup.add("old nickname "+user.getName());
+                        user.setName(newNickname);
+                        System.out.println("\nSuccess!");
+                        System.out.println("\n your new nickname is "+ user.getName());
+
+    }
+    private void perfomActionEditRefactor2(final Users user, final ArrayList<UserDo> users){
+                        System.out.println("\nenter your new name:");
+                        final Scanner w = new Scanner(System.in);
+                        final String newUsername = w.next();
+                        for(final Users User : users){
+                            if(user.getlogin().equals(newUsername)){
+                                System.out.print("\033[H\033[2J");  
+                                System.out.flush();
+                                System.out.println("\nname already exists. ");
+                            return;
+                            }
+                        }
+                        user.backup.add("old login "+user.getlogin());
+                        user.setlogin(newUsername);
+                        System.out.print("\033[H\033[2J");  
+                        System.out.flush();
+                        System.out.println("\nSuccess!");
+                        System.out.println("\n your new username is "+ user.getlogin());    
+
+    }
+    private void perfomActionEditRefactor3(final Users user, final ArrayList<UserDo> users){
+                        System.out.println("\nEnter your new password: ");
+                        final Scanner c = new Scanner(System.in);
+                        final String password = c.next();
+                        if(password.equals(user.getpassword())){
+                            System.out.print("\033[H\033[2J");  
+                            System.out.flush();
+                            System.out.println("\nyour password cannot be the same as the previous!");
+                        return;
+        }
+                        System.out.println("\nRepeat your password: ");
+                        final Scanner c2 = new Scanner(System.in);
+                        final String password2 = c2.next();
+    
+                        if(password.equals(password2)){
+                            user.backup.add("old password "+user.getpassword());
+                            user.setpassword(password); 
+                        }
+                        else{
+                            System.out.print("\033[H\033[2J");  
+                            System.out.flush();
+                            System.out.println("\nPasswords are not the same ");
+                            return;
+                        }
+                        System.out.print("\033[H\033[2J");  
+                        System.out.flush();
+                        System.out.println("\nSuccess!");
+                        System.out.println("\n your new password is "+ user.getpassword());
+
+                        }
+    private void perfomActionEditRefactor4(final Users user, final ArrayList<UserDo> users){
+                        System.out.println("\nenter your new email:");
+                        final Scanner e = new Scanner(System.in);
+                        final String newEmail = e.next();
+                        for(final Users User : users){
+                            if(user.getEmail().equals(newEmail)){
+                                System.out.print("\033[H\033[2J");  
+                                System.out.flush();
+                                System.out.println("\nemail already exists. ");
+                                return;
+                            }
+                        }
+                        user.backup.add("old email "+user.getEmail());
+                        user.setEmail(newEmail);
+                        System.out.print("\033[H\033[2J");  
+                        System.out.flush();
+                        System.out.println("\nSuccess!");
+                        System.out.println("\n your new Email is "+ user.getEmail());
+
+    }
+                        private void perfomActionEditRefactor5(final Users user, final ArrayList<UserDo> users){
+                        System.out.println("\nenter your new number:");
+                        final Scanner r = new Scanner(System.in);
+                        try{
+                            final int newNumber = Integer.parseInt(r.nextLine());
+
+                            for(final Users User : users){
+                                if(user.getNumber() == newNumber){
+                                    System.out.print("\033[H\033[2J");  
+                                    System.out.flush();
+                                    System.out.println("\nnumber already exists. ");
+                                    return;
+                                }
+                            }
+                            System.out.print("\033[H\033[2J");  
+                        System.out.flush();
+                        user.backup.add("old number "+user.getNumber());
+                        user.setNumber(newNumber); 
+                        System.out.println("\nSuccess!");
+                        System.out.println("\n your new number is "+ user.getNumber());
+
+    }
+                    catch(NumberFormatException i){
+                        System.out.println("Invalid selection, Please try again.");
+                        System.out.println("\ntype to continue:");
+                        Scanner ex =  new Scanner(System.in);
+                        ex.nextLine();
+                    }
+
+    }
+    
     private void perfomActionEdit(final Users user, final ArrayList<UserDo> users){
    
         final Scanner a = new Scanner(System.in);
@@ -178,123 +299,23 @@ public class MenuLogin{
                 switch(choice){
         
                     case 1:
-                    System.out.println("\nenter your new nickname:");
-                    final Scanner q = new Scanner(System.in);
-                    final String newNickname = q.next();
-                        for(final Users User : users){
-                            if(user.getName().equals(newNickname)){
-                                System.out.print("\033[H\033[2J");  
-                                System.out.flush();
-                            System.out.println("\nnickname already exists. ");
-                            return;
-                            }
-                        }
-                        System.out.print("\033[H\033[2J");  
-                        System.out.flush();
-                        user.backup.add("old nickname "+user.getName());
-                        user.setName(newNickname);
-                        System.out.println("\nSuccess!");
-                        System.out.println("\n your new nickname is "+ user.getName());
+                        perfomActionEditRefactor1(user, users);
                     break;
                     case 2:
-                        System.out.println("\nenter your new name:");
-                        final Scanner w = new Scanner(System.in);
-                        final String newUsername = w.next();
-                        for(final Users User : users){
-                            if(user.getlogin().equals(newUsername)){
-                                System.out.print("\033[H\033[2J");  
-                                System.out.flush();
-                            System.out.println("\nname already exists. ");
-                            return;
-                            }
-                        }
-                        user.backup.add("old login "+user.getlogin());
-                        user.setlogin(newUsername);
-                        System.out.print("\033[H\033[2J");  
-                        System.out.flush();
-                        System.out.println("\nSuccess!");
-                        System.out.println("\n your new username is "+ user.getlogin());
+                        perfomActionEditRefactor2(user, users);
                     break;
         
-                case 3:
-                        System.out.println("\nEnter your new password: ");
-                        final Scanner c = new Scanner(System.in);
-                        final String password = c.next();
-                        if(password.equals(user.getpassword())){
-                            System.out.print("\033[H\033[2J");  
-                            System.out.flush();
-                            System.out.println("\nyour password cannot be the same as the previous!");
-                            return;
-                        }
-                        System.out.println("\nRepeat your password: ");
-                        final Scanner c2 = new Scanner(System.in);
-                        final String password2 = c2.next();
-                    
-                    if(password.equals(password2)){
-                        user.backup.add("old password "+user.getpassword());
-                        user.setpassword(password); 
-                    }
-                    else{
-                        System.out.print("\033[H\033[2J");  
-                        System.out.flush();
-                        System.out.println("\nPasswords are not the same ");
-                        return;
-                    }
-                    System.out.print("\033[H\033[2J");  
-                    System.out.flush();
-                        System.out.println("\nSuccess!");
-                        System.out.println("\n your new password is "+ user.getpassword());
-                break;
+                    case 3:
+                        perfomActionEditRefactor3(user, users);
+                    break;
         
-                case 4:
-                    System.out.println("\nenter your new email:");
-                    final Scanner e = new Scanner(System.in);
-                    final String newEmail = e.next();
-                    for(final Users User : users){
-                        if(user.getEmail().equals(newEmail)){
-                            System.out.print("\033[H\033[2J");  
-                            System.out.flush();
-                            System.out.println("\nemail already exists. ");
-                            return;
-                        }
-                    }
-                    user.backup.add("old email "+user.getEmail());
-                    user.setEmail(newEmail);
-                    System.out.print("\033[H\033[2J");  
-                    System.out.flush();
-                    System.out.println("\nSuccess!");
-                    System.out.println("\n your new Email is "+ user.getEmail());
-                break;
-                case 5:
-                    System.out.println("\nenter your new number:");
-                    final Scanner r = new Scanner(System.in);
-                    try{
-                         final int newNumber = Integer.parseInt(r.nextLine());
+                    case 4:
+                    perfomActionEditRefactor4(user, users);
 
-                    for(final Users User : users){
-                        if(user.getNumber() == newNumber){
-                            System.out.print("\033[H\033[2J");  
-                            System.out.flush();
-                            System.out.println("\nnumber already exists. ");
-                            return;
-                        }
-                    }
-                    System.out.print("\033[H\033[2J");  
-                    System.out.flush();
-                    user.backup.add("old number "+user.getNumber());
-                    user.setNumber(newNumber); 
-                    System.out.println("\nSuccess!");
-                    System.out.println("\n your new number is "+ user.getNumber());
-        
-                }
-                catch(NumberFormatException i){
-                    System.out.println("Invalid selection, Please try again.");
-                    System.out.println("\ntype to continue:");
-                    Scanner ex =  new Scanner(System.in);
-                    ex.nextLine();
-                }
-                
-                default:
+                    break;
+                    case 5:
+                    perfomActionEditRefactor5(user, users);
+                    default:
                 }
             }
             catch(final NumberFormatException e){
