@@ -12,3 +12,8 @@
 #### Solução 
 - Classe ``MenuLogin`` foi fragmentada em outras classes mais específicas como: ``Friend``, ``CommunityEdit``.
 
+### Large Method 
+- Metodo ``performAction`` na classe `MenuLogin` possui muitas condições de menu com switch case
+#### Solução
+- Aplicação de padrão `Command` implementada com interface e polimorfismo para substituir o Menu
+
